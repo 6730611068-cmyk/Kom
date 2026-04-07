@@ -30,10 +30,12 @@
         <button id="submit_btn" onclick='submitData()'>ส่งข้อมูล</button>
     </div>
     <div onmouseover='overitem()'>
-        mouseover
+        วางเมาส์
     </div>
     <div id="hellomyname">hello<span style="display: none;">my name</span>
     </div>
+
+    <a id = "thislink" href="https://google.com" target="_blank">google</a>
 
     <script>
         console.log('Hello');
@@ -41,9 +43,9 @@
 
         console.log(FirstnameDOM.value);
 
-        /*console.log(document.getElementById('firstname').value);
+        console.log(document.getElementById('firstname').value);
         console.log(document.querySelector('#firstname').value);
-        console.log(document.querySelector('input[name="first"]').value);*/
+        console.log(document.querySelector('input[name="first"]').value);
 
         let hobby = document.querySelectorAll('input[name=interest]');
         console.log(hobby.length);
@@ -57,6 +59,7 @@
         btn.addEventListener('click', submitData);
         function submitData() {
             console.log('ส่งข้อมูลแล้ว')
+            btn.setAttribute('disabled','true')
         };
         function overitem() {
             console.log('วางเมาส์')
@@ -66,13 +69,13 @@
         console.log(myname.textContent);
         console.log(myname.innerText);
         console.log(myname.innerHTML);
-        /*let myhtml = '<ul>';
+        let myhtml = '<ul>';
         myhtml += '<li>' + FirstnameDOM.value + '</li>';
         myhtml += '</ul>';
         console.log(document.getElementById('mycontent').innerHTML = myhtml);
         document.getElementById('mycontent').innerHTML = myhtml;
         let setCSS = document.getElementById('hellomyname');
-        setCSS.style.backgroundColor = 'blue';*/
+        setCSS.style.backgroundColor = 'blue';
 
         function submitinterest() {
             let interestdom = document.querySelectorAll('input[name-interest]');
@@ -85,8 +88,12 @@
             let contentdom = document.getElementById('newcontent');
             contentdom.innerHTML = contenthtml;
         }
+        let thislinkDOM = document.getElementById('thislink');
+        console.log(thislinkDOM.getAttribute('href'));
+        thislinkDOM.setAttribute('href','https://www.youtube.com');
+
+
+
     </script>
-
 </body>
-
 </html>
